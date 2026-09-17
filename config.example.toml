@@ -1,0 +1,38 @@
+# ~/.config/welcome/config.toml — every key is optional
+
+name     = "Andrew"
+greeting = "Hey {name}"          # rendered big; {name} is substituted
+font     = "slant"               # any pyfiglet / figlet font
+taglines = ["the terminal missed you.", "let's build something today.", "coffee first, then commits."]
+
+cards = ["clock", "weather", "markets"]   # which cards, in which order
+
+# clock
+time_format = "%-I:%M %p"        # "%H:%M" for 24-hour
+date_format = "%A, %B %-d"
+uptime = true
+
+# weather
+city  = "Atlanta"                # geocoded once, then cached for 30 days
+# lat = 33.75                    # set both to skip geocoding; city is then just the label
+# lon = -84.39
+units = "fahrenheit"             # or "celsius"
+
+# markets
+stocks = ["AAPL", "NVDA"]        # tickers CNBC knows: AAPL, SPY; indices start with a dot: ".SPX", ".IXIC"
+fetch_on_launch = true           # false once a timer runs `welcome --prefetch` for you (section 6)
+
+[crypto]                         # CoinGecko id (from the coin's URL) = label to show
+bitcoin  = "BTC"
+ethereum = "ETH"
+
+[theme]
+flavor   = "mocha"               # mocha | macchiato | frappe | latte
+icons    = "nerd"                # nerd (needs a Nerd Font) | emoji
+border   = "rounded"             # rounded | heavy | double | square | ascii
+gradient = ["mauve", "pink", "flamingo", "peach", "yellow", "green", "teal", "sky", "blue", "lavender"]
+
+[cache_minutes]
+weather = 15
+markets = 5
+geocode = 43200                  # 30 days

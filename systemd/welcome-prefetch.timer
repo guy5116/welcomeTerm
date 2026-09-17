@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh the welcome dashboard cache every 5 minutes
+
+[Timer]
+OnBootSec=20s
+OnUnitActiveSec=5min
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target
